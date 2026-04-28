@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f3f3f3;
+  color: #111;
+}
+
+/* NAV */
+.top-nav {
+  height: 76px;
+  background: #111;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6%;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -2px;
+  color: #fff;
+  text-shadow: 2px 2px 0 #b68a21;
+  cursor: pointer;
+}
+
+.nav-links a {
+  color: white;
+  margin-left: 20px;
+  font-weight: 700;
+  opacity: 0.82;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+/* HERO */
+.hero {
+  min-height: 560px;
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.72)),
+  url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1600') center/cover;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 6% 80px;
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.hero small {
+  letter-spacing: 5px;
+  font-weight: 800;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 7vw, 86px);
+  line-height: 0.96;
+  margin: 18px 0;
+}
+
+.hero p {
+  font-size: 20px;
+  color: #eee;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  padding: 13px 18px;
+  background: white;
+  color: #111;
+  font-weight: 800;
+  border-radius: 12px;
+  margin-top: 15px;
+  text-decoration: none;
+}
+
+/* MAIN */
+.main {
+  padding: 42px 6%;
+}

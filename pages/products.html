@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>STYLEE - Shop</title>
+
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/products.css">
+</head>
+<body>
+
+<header class="top-nav">
+  <div class="logo">STYLEE</div>
+  <nav class="nav-links">
+    <a href="home.html">Home</a>
+    <a href="products.html">Shop</a>
+  </nav>
+</header>
+
+<main class="main" id="shopSection">
+
+  <div class="section-head">
+    <h2>Shop Products</h2>
+
+    <div class="filters">
+      <input id="searchInput" placeholder="Search product" oninput="renderProducts()" />
+      <select id="categoryFilter" onchange="renderProducts()">
+        <option value="all">All categories</option>
+      </select>
+      <select id="genderFilter" onchange="renderProducts()">
+        <option value="all">All genders</option>
+        <option value="men">Men</option>
+        <option value="women">Women</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="product-grid" id="productGrid"></div>
+
+</main>
+
+<script src="../js/products.js"></script>
+</body>
+</html>
