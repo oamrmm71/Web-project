@@ -1,4 +1,3 @@
-/* Youssef */
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,15 +9,17 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <header class="top-nav">
     <div class="logo" onclick="navigate('../home/home.html')">STYLEE</div>
+
     <nav class="nav-links">
       <button onclick="navigate('../home/home.html')">Home</button>
       <button onclick="navigate('../products/products.html')">Shop</button>
       <button onclick="navigate('../admin/admin.html')">Admin Panel</button>
       <button id="loginNav" onclick="navigate('../login/login.html')">Login</button>
-      <button class="cart-pill" onclick="navigate('../cart/cart.html')">Cart <span id="cartCount">0</span></button>
+      <button class="cart-pill" onclick="navigate('../cart/cart.html')">
+        Cart <span id="cartCount">0</span>
+      </button>
     </nav>
   </header>
 
@@ -29,7 +30,6 @@
     </div>
 
     <div class="admin-grid">
-      <!-- Add Product Form -->
       <div class="panel">
         <h2>Add Product</h2>
 
@@ -59,12 +59,13 @@
 
         <div class="field">
           <label>Size Quantities</label>
+
           <div class="size-stock-grid">
-            <label>S  <input id="qtyS"   type="number" min="0" value="0" /></label>
-            <label>M  <input id="qtyM"   type="number" min="0" value="0" /></label>
-            <label>L  <input id="qtyL"   type="number" min="0" value="0" /></label>
-            <label>XL <input id="qtyXL"  type="number" min="0" value="0" /></label>
-            <label>XXL<input id="qtyXXL" type="number" min="0" value="0" /></label>
+            <label>S <input id="qtyS" type="number" min="0" value="0" /></label>
+            <label>M <input id="qtyM" type="number" min="0" value="0" /></label>
+            <label>L <input id="qtyL" type="number" min="0" value="0" /></label>
+            <label>XL <input id="qtyXL" type="number" min="0" value="0" /></label>
+            <label>XXL <input id="qtyXXL" type="number" min="0" value="0" /></label>
           </div>
         </div>
 
@@ -74,12 +75,13 @@
         </div>
 
         <h3 style="margin:18px 0 12px">Colors and Photos</h3>
+
         <div id="colorRows"></div>
+
         <button class="btn light full" onclick="addColorRow()">+ Add Another Color</button>
         <button class="btn full" style="margin-top:14px" onclick="addProduct()">Save Product</button>
       </div>
 
-      <!-- Product List -->
       <div class="panel">
         <h2>Current Products</h2>
         <div id="adminProducts"></div>
