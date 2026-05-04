@@ -10,7 +10,10 @@ body {
   color: #111;
 }
 
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
   font: inherit;
 }
 
