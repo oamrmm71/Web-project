@@ -1,1 +1,103 @@
 /* Youssef */
+.admin-page {
+  padding: 48px 6%;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: 440px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.panel {
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.06);
+}
+
+.panel h2 {
+  margin-bottom: 18px;
+}
+
+.size-stock-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.size-stock-grid label {
+  display: grid;
+  gap: 6px;
+  font-weight: 900;
+  font-size: 12px;
+  text-align: center;
+}
+
+.size-stock-grid input {
+  width: 100%;
+  padding: 10px 6px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  background: #fafafa;
+}
+
+.color-row-wrap {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.remove-color-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #c82333;
+  color: white;
+  font-size: 18px;
+  font-weight: 900;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  cursor: pointer;
+  border: 0;
+}
+
+.color-row {
+  display: grid;
+  grid-template-columns: 1fr 80px;
+  gap: 10px;
+  padding: 12px;
+  background: #f7f7f7;
+  border-radius: 14px;
+  margin-bottom: 12px;
+}
+
+.color-row .field {
+  margin-bottom: 0;
+}
+
+.admin-product {
+  display: grid;
+  grid-template-columns: 90px 1fr auto;
+  gap: 14px;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.admin-product img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #eee;
+}
+
+@media (max-width: 900px) {
+  .admin-grid { grid-template-columns: 1fr; }
+}
