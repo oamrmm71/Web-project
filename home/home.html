@@ -1,1 +1,164 @@
-/*Omar*/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STYLEE Store</title>
+  <link rel="stylesheet" href="../home/home.css" />
+</head>
+<body>
+  <header class="top-nav">
+    <div class="logo" onclick="showPage('home')">STYLEE</div>
+    <nav class="nav-links">
+      <button onclick="showPage('home')">Home</button>
+      <button onclick="scrollProducts()">Shop</button>
+      <button onclick="showPage('admin')">Admin Panel</button>
+      <button onclick="showPage('login')" id="loginNav">Login</button>
+      <button class="cart-pill" onclick="showPage('cart')">Cart <span id="cartCount">0</span></button>
+    </nav>
+  </header>
+
+  <section class="page fade-page" id="homePage">
+    <div class="hero">
+      <div class="hero-content">
+        <small>SPRING 2026</small>
+        <h1>Own your style. Break the rules.</h1>
+        <p>Streetwear products with color choices, size selection, and cart flow.</p>
+      </div>
+    </div>
+
+    <main class="main" id="shopSection">
+      <div class="section-head">
+        <h2>Shop Products</h2>
+        <div class="filters">
+          <input id="searchInput" placeholder="Search product" oninput="renderProducts()" />
+          <select id="categoryFilter" onchange="renderProducts()">
+            <option value="all">All categories</option>
+          </select>
+          <select id="genderFilter" onchange="renderProducts()">
+            <option value="all">All genders</option>
+            <option value="men">Men</option>
+            <option value="women">Women</option>
+          </select>
+        </div>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </main>
+  </section>
+
+  <!-- Login Page -->
+  <section class="page auth-page hidden" id="loginPage">
+    <div class="auth-box">
+      <div class="logo auth-logo">STYLEE</div>
+      <h2>LOGIN</h2>
+      <div class="field">
+        <label>Email</label>
+        <input id="loginEmail" placeholder="example@email.com" />
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input id="loginPassword" type="password" placeholder="Password" />
+      </div>
+      <button class="btn full" onclick="fakeLogin()">Login</button>
+      <p class="auth-switch">No account? <span onclick="showPage('signup')">Create account</span></p>
+    </div>
+  </section>
+
+  <!-- Signup Page -->
+  <section class="page auth-page hidden" id="signupPage">
+    <div class="auth-box">
+      <div class="logo auth-logo">STYLEE</div>
+      <h2>SIGN UP</h2>
+      <div class="field">
+        <label>Name</label>
+        <input id="signupName" placeholder="Your name" />
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input id="signupEmail" placeholder="example@email.com" />
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input id="signupPassword" type="password" placeholder="Password" />
+      </div>
+      <button class="btn full" onclick="fakeSignup()">Create Account</button>
+      <p class="auth-switch">Already have an account? <span onclick="showPage('login')">Login</span></p>
+    </div>
+  </section>
+
+  <!-- Product Detail Page -->
+  <section class="page hidden" id="detailPage"></section>
+
+  <!-- Cart Page -->
+  <section class="page cart-page hidden" id="cartPage">
+    <div class="section-head">
+      <h2>Your Cart</h2>
+      <button class="btn light" onclick="showPage('home')">Continue Shopping</button>
+    </div>
+    <div class="cart-layout">
+      <div id="cartItems"></div>
+      <aside class="summary">
+        <h2>Order Summary</h2>
+        <div class="summary-row"><span>Subtotal</span><strong id="subtotalText">$0</strong></div>
+        <div class="summary-row"><span>Shipping</span><strong id="shippingText">$0</strong></div>
+        <div class="summary-row total"><span>Total</span><strong id="totalText">$0</strong></div>
+        <button class="btn full" style="margin-top:18px" onclick="checkout()">Place Order</button>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Admin Page -->
+  <section class="page admin-page hidden" id="adminPage">
+    <div class="section-head">
+      <h2>Admin Panel</h2>
+      <button class="btn light" onclick="resetDemoData()">Reset Demo Data</button>
+    </div>
+    <div class="admin-grid">
+      <div class="panel">
+        <h2>Add Product</h2>
+        <div class="field"><label>Product Name</label><input id="adminName" placeholder="Premium Puffer Jacket" /></div>
+        <div class="field"><label>Category</label><input id="adminCategory" placeholder="Jackets" /></div>
+        <div class="field">
+          <label>Gender</label>
+          <select id="adminGender">
+            <option value="men">Men</option>
+            <option value="women">Women</option>
+            <option value="both">Both</option>
+          </select>
+        </div>
+        <div class="field"><label>Price</label><input id="adminPrice" type="number" placeholder="179" /></div>
+        <div class="field">
+          <label>Size Quantity</label>
+          <div class="size-stock-grid">
+            <label>S <input id="qtyS" type="number" min="0" value="0" /></label>
+            <label>M <input id="qtyM" type="number" min="0" value="0" /></label>
+            <label>L <input id="qtyL" type="number" min="0" value="0" /></label>
+            <label>XL <input id="qtyXL" type="number" min="0" value="0" /></label>
+            <label>XXL <input id="qtyXXL" type="number" min="0" value="0" /></label>
+          </div>
+        </div>
+        <div class="field"><label>Description</label><textarea id="adminDesc" rows="4" placeholder="Short product description"></textarea></div>
+        <h3 style="margin:18px 0 12px">Colors and Photos</h3>
+        <div id="colorRows"></div>
+        <button class="btn light full" onclick="addColorRow()">Add Another Color</button>
+        <button class="btn full" style="margin-top:14px" onclick="addProduct()">Save Product</button>
+      </div>
+      <div class="panel">
+        <h2>Current Products</h2>
+        <div id="adminProducts"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="../shared/data.js"></script>
+  <script src="../shared/utils.js"></script>
+  <script src="../home/home.js"></script>
+  <script src="../products/products.js"></script>
+  <script src="../product-details/product-details.js"></script>
+  <script src="../cart/cart.js"></script>
+  <script src="../admin/admin.js"></script>
+  <script src="../login/login.js"></script>
+</body>
+</html>

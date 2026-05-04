@@ -1,1 +1,227 @@
 /*Omar*/
+/* ========================
+   GLOBAL RESET & BASE
+======================== */
+•⁠  ⁠{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f3f3f3;
+  color: #111;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.fade-page {
+  animation: fadePage 0.28s ease;
+}
+
+@keyframes fadePage {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================
+   NAV
+======================== */
+.top-nav {
+  height: 76px;
+  background: #111;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6%;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -2px;
+  color: #fff;
+  text-shadow: 2px 2px 0 #b68a21;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav-links button {
+  background: transparent;
+  color: white;
+  font-weight: 700;
+  opacity: 0.82;
+}
+
+.nav-links button:hover {
+  opacity: 1;
+}
+
+.cart-pill {
+  background: white !important;
+  color: #111 !important;
+  padding: 10px 16px;
+  border-radius: 999px;
+}
+
+/* ========================
+   SHARED COMPONENTS
+======================== */
+.page {
+  min-height: calc(100vh - 76px);
+}
+
+.btn {
+  background: #111;
+  color: white;
+  padding: 13px 18px;
+  border-radius: 12px;
+  font-weight: 800;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
+}
+
+.btn.light {
+  background: white;
+  color: #111;
+  border: 1px solid #ddd;
+}
+
+.btn.danger {
+  background: #c82333;
+}
+
+.btn.full {
+  width: 100%;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.field label {
+  font-weight: 800;
+  font-size: 13px;
+  color: #555;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 13px 14px;
+  border-radius: 12px;
+  background: #fafafa;
+  outline: none;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.section-head h2 {
+  font-size: 34px;
+}
+
+.toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  background: #111;
+  color: white;
+  padding: 16px 20px;
+  border-radius: 14px;
+  font-weight: 800;
+  opacity: 0;
+  transform: translateY(18px);
+  pointer-events: none;
+  transition: 0.25s ease;
+  z-index: 200;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================
+   HOME PAGE
+======================== */
+.hero {
+  min-height: 560px;
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.72)),
+              url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1600') center/cover;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 6% 80px;
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.hero small {
+  letter-spacing: 5px;
+  font-weight: 800;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 7vw, 86px);
+  line-height: 0.96;
+  margin: 18px 0;
+}
+
+.hero p {
+  font-size: 20px;
+  color: #eee;
+  max-width: 540px;
+  line-height: 1.5;
+}
+
+.main {
+  padding: 42px 6% 80px;
+}
+
+/* ========================
+   RESPONSIVE
+======================== */
+@media (max-width: 900px) {
+  .top-nav { padding: 0 18px; }
+  .nav-links { gap: 10px; }
+  .nav-links button { font-size: 12px; }
+  .hero { min-height: 460px; }
+}
