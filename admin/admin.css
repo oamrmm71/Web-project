@@ -16,7 +16,7 @@
 .size-stock-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 8px;
+  gap: 8px; 
 }
 
 .size-stock-grid label {
@@ -94,14 +94,4 @@
   .admin-grid {
     grid-template-columns: 1fr;
   }
-}
-.admin-page {
-  padding: 48px 6%;
-}
-
-.admin-grid {
-  display: grid;
-  grid-template-columns: 440px 1fr;
-  gap: 28px;
-  align-items: start;
 }
